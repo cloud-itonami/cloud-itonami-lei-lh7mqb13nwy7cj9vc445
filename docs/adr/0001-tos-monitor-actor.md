@@ -48,7 +48,7 @@ pilot had been a GUESSED set that did not include `:terms-of-use` (or
 several other real archive doc-types). That was fixed in the pilot repo
 (a separate small PR, re-tested green) before this repo was built, so this
 repo ships with the corrected vocabulary from the start and its own
-`clojure -M:dev:test`/`clojure -M:dev:run` correctly treat its real
+`kbb -M:dev:test`/`kbb -M:dev:run` correctly treat its real
 `:terms-of-use` doc-type as valid, not a HARD hold.
 
 The archive-of-record (`80-data/public/tos.journal.edn`) is never touched;
@@ -65,7 +65,7 @@ different company's real data revealed.
 ## Run
 
 ```bash
-clojure -M:dev:run     # walk a clean lifecycle + all six HARD-hold checks + a phase-0 hold + a backend swap
-clojure -M:dev:test    # governor contract · phase invariants · store parity · advisor smoke
-clojure -M:lint        # clj-kondo (errors fail; CI mirrors this)
+kbb -M:dev:run     # walk a clean lifecycle + all six HARD-hold checks + a phase-0 hold + a backend swap
+kbb -M:dev:test    # governor contract · phase invariants · store parity · advisor smoke
+kbb -M:lint        # clj-kondo (errors fail; CI mirrors this)
 ```
